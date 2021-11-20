@@ -17,7 +17,10 @@ export default class Home extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<Image style={styles.logo} source={require("../../assets/logo.png")} />
+				<Image
+					style={styles.logo}
+					source={require("../../assets/images/logo.png")}
+				/>
 				<Text style={styles.textDash}>HREO DASH</Text>
 				<ScrollView
 					style={{ marginTop: 30 }}

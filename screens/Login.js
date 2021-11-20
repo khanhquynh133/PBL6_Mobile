@@ -16,7 +16,10 @@ export default () => {
 
 	return (
 		<View style={styles.container}>
-			<Image style={styles.logo} source={require("../assets/logo.png")} />
+			<Image
+				style={styles.logo}
+				source={require("../assets/images/logo.png")}
+			/>
 			<Text style={styles.login}>LOGIN</Text>
 			<TextInput
 				style={styles.input}

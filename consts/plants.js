@@ -6,7 +6,7 @@ const plants = [
 		name: "Data Asia House",
 		address: "Nguyen Huu An, DaNang",
 		like: true,
-		img: require("../assets/DHA.png"),
+		img: require("../assets/images/DHA.png"),
 		about:
 			"Succulent Plantis one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.",
 	},
@@ -16,7 +16,7 @@ const plants = [
 		name: "Supreme Tech",
 		address: "Nguyen Huu Tho, Da Nang",
 		like: false,
-		img: require("../assets/Supreme.png"),
+		img: require("../assets/images/Supreme.png"),
 		about:
 			"Dragon Plant one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.",
 	},
@@ -26,7 +26,7 @@ const plants = [
 		address: "Tran Phu, Da Nang",
 		like: false,
 		like: false,
-		img: require("../assets/TCX.png"),
+		img: require("../assets/images/TCX.png"),
 		about:
 			"Ravenea Plant one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.",
 	},
@@ -36,7 +36,7 @@ const plants = [
 		name: "Enlab",
 		address: "Che Viet Tan, Da Nang",
 		like: true,
-		img: require("../assets/Enlab.png"),
+		img: require("../assets/images/Enlab.png"),
 		about:
 			"Potted Plant Ravenea Plant one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.",
 	},
@@ -45,7 +45,7 @@ const plants = [
 		name: "KMS",
 		address: "2/9 Street, Da Nang",
 		like: true,
-		img: require("../assets/KMS.png"),
+		img: require("../assets/images/KMS.png"),
 		about:
 			"Potted Plant Ravenea Plant one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.",
 	},
@@ -54,7 +54,7 @@ const plants = [
 		name: "FPT",
 		address: "Ngu Hanh Son, Da Nang",
 		like: false,
-		img: require("../assets/FPT.png"),
+		img: require("../assets/images/FPT.png"),
 		about:
 			"Potted Plant Ravenea Plant one of the most popular and beautiful species that will produce clumpms. The storage of water often gives succulent plants a more swollen or fleshy appearance than other plants, a characteristic known as succulence.",
 	},

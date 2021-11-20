@@ -12,7 +12,10 @@ import {
 export default () => {
 	return (
 		<View style={styles.container}>
-			<Image style={styles.Logo} source={require("../assets/logo.png")} />
+			<Image
+				style={styles.Logo}
+				source={require("../assets/images/logo.png")}
+			/>
 			<Text style={styles.hreo}>HREO!</Text>
 			<Text style={styles.slogan}>Start your journey with us</Text>
 

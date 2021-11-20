@@ -1,12 +1,19 @@
 /** @format */
 
 import React from "react";
-import { View, SafeAreaView, Image, Text, StyleSheet } from "react-native";
+import {
+	ScrollView,
+	View,
+	SafeAreaView,
+	Image,
+	Text,
+	StyleSheet,
+} from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import COLORS from "../../consts/colors";
 
-const DetailCompany = ({ navigation, route }) => {
-	const plant = route.params;
+const DetailCompany = () => {
+	//const plant = route.params;
 
 	return (
 		<SafeAreaView
@@ -16,13 +23,32 @@ const DetailCompany = ({ navigation, route }) => {
 			}}>
 			<View style={style.header}>
 				<Icon name='arrow-back' size={28} onPress={() => navigation.goBack()} />
-				<Icon name='shopping-cart' size={28} />
 			</View>
 			<View style={style.imageContainer}>
-				<Image source={plant.img} style={{ resizeMode: "contain", flex: 1 }} />
+				<Image
+					source={require("../../assets/images/DHA.png")}
+					style={{ resizeMode: "contain", flex: 1 }}
+				/>
 			</View>
+			{/* <ScrollView
+				style={{ marginTop: 30, height: 50 }}
+				showsHorizontalScrollIndicator={false}
+				horizontal={true}>
+				<Image
+					source={require("../../assets/DHA.png")}
+					style={{ width: 50, height: 50, flex: 1 }}
+				/>
+				<Image
+					source={require("../../assets/TCX.png")}
+					style={{ width: 50, height: 50, flex: 1 }}
+				/>
+				<Image
+					source={require("../../assets/Supreme.png")}
+					style={{ width: 50, height: 50, flex: 1 }}
+				/>
+			</ScrollView> */}
 			<View style={style.detailsContainer}>
-				<View
+				{/* <View
 					style={{
 						marginLeft: 20,
 						flexDirection: "row",
@@ -30,17 +56,19 @@ const DetailCompany = ({ navigation, route }) => {
 					}}>
 					<View style={style.line} />
 					<Text style={{ fontSize: 18, fontWeight: "bold" }}>Best choice</Text>
-				</View>
+				</View> */}
 				<View
 					style={{
 						marginLeft: 20,
-						marginTop: 20,
 						flexDirection: "row",
 						justifyContent: "space-between",
 						alignItems: "center",
 					}}>
-					<Text style={{ fontSize: 22, fontWeight: "bold" }}>{plant.name}</Text>
-					<View style={style.priceTag}>
+					<Text style={{ fontSize: 22, fontWeight: "bold" }}>
+						Data House Asia
+					</Text>
+					<View style={style.rate}>
+						{/* <Icon name='start' size={16} /> */}
 						<Text
 							style={{
 								marginLeft: 15,
@@ -48,12 +76,12 @@ const DetailCompany = ({ navigation, route }) => {
 								fontWeight: "bold",
 								fontSize: 16,
 							}}>
-							${plant.price}
+							4.7/5
 						</Text>
 					</View>
 				</View>
 				<View style={{ paddingHorizontal: 20, marginTop: 10 }}>
-					<Text style={{ fontSize: 20, fontWeight: "bold" }}>About</Text>
+					<Text style={{ fontSize: 20, fontWeight: "bold" }}>About us</Text>
 					<Text
 						style={{
 							color: "grey",
@@ -61,7 +89,8 @@ const DetailCompany = ({ navigation, route }) => {
 							lineHeight: 22,
 							marginTop: 10,
 						}}>
-						{plant.about}
+						We are 200+ professional software engineers with more than 10 years
+						experience in delivering superior products.
 					</Text>
 					<View
 						style={{
@@ -69,7 +98,7 @@ const DetailCompany = ({ navigation, route }) => {
 							flexDirection: "row",
 							justifyContent: "space-between",
 						}}>
-						<View
+						{/* <View
 							style={{
 								flexDirection: "row",
 								alignItems: "center",
@@ -88,16 +117,16 @@ const DetailCompany = ({ navigation, route }) => {
 							<View style={style.borderBtn}>
 								<Text style={style.borderBtnText}>+</Text>
 							</View>
-						</View>
+						</View> */}
 
-						<View style={style.buyBtn}>
+						<View style={style.editBtn}>
 							<Text
 								style={{
 									color: COLORS.white,
 									fontSize: 18,
 									fontWeight: "bold",
 								}}>
-								Buy
+								Edit Company
 							</Text>
 						</View>
 					</View>
@@ -115,10 +144,9 @@ const style = StyleSheet.create({
 		justifyContent: "space-between",
 	},
 	imageContainer: {
-		flex: 0.45,
+		flex: 0.5,
 		marginTop: 20,
-		justifyContent: "center",
-		alignItems: "center",
+		marginBottom: 7,
 	},
 	detailsContainer: {
 		flex: 0.55,
@@ -127,14 +155,7 @@ const style = StyleSheet.create({
 		marginBottom: 7,
 		borderRadius: 20,
 		marginTop: 30,
-		paddingTop: 30,
-	},
-	line: {
-		width: 25,
-		height: 2,
-		backgroundColor: COLORS.dark,
-		marginBottom: 5,
-		marginRight: 3,
+		paddingTop: 20,
 	},
 	borderBtn: {
 		borderColor: "grey",
@@ -146,16 +167,16 @@ const style = StyleSheet.create({
 		height: 40,
 	},
 	borderBtnText: { fontWeight: "bold", fontSize: 28 },
-	buyBtn: {
-		width: 130,
+	editBtn: {
+		width: 160,
 		height: 50,
-		backgroundColor: COLORS.green,
+		backgroundColor: COLORS.blue,
 		justifyContent: "center",
 		alignItems: "center",
 		borderRadius: 30,
 	},
-	priceTag: {
-		backgroundColor: COLORS.green,
+	rate: {
+		backgroundColor: COLORS.blue,
 		width: 80,
 		height: 40,
 		justifyContent: "center",

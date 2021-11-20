@@ -24,7 +24,10 @@ export function DrawerContent(props) {
 				<View style={styles.drawerContent}>
 					<View style={styles.userInfoSection}>
 						<View style={{ flexDirection: "row", marginTop: 15 }}>
-							<Avatar.Image source={require("../assets/logo.png")} size={50} />
+							<Avatar.Image
+								source={require("../assets/images/logo.png")}
+								size={50}
+							/>
 							<View style={{ marginLeft: 15, flexDirection: "column" }}>
 								<Title style={styles.title}>Quynh Hoang</Title>
 								<Caption style={styles.caption}>Admin</Caption>
