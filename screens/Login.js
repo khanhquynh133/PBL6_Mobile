@@ -1,18 +1,37 @@
 /** @format */
 
-import React from "react";
+import React, {useState} from "react";
 import {
 	StyleSheet,
 	Text,
 	View,
+	Button,
 	Image,
 	TextInput,
 	TouchableOpacity,
 } from "react-native";
+import rest from "../src/api/rest";
+// import { apiRequest } from "../src/utils/apiRequest";
 
 export default () => {
-	const [email, onChangeEmail] = React.useState("");
-	const [pass, onChangePass] = React.useState("");
+	const [dataLogin, setDataLogin] = useState({
+		username: "",
+		password: "",
+	})
+	// const [email, onChangeEmail] = useState("");
+	// const [pass, onChangePass] = useState("");
+	
+	const handleChange = async() => {
+		dataLogin.grant_type = "password";
+		let s = new URLSearchParams(Object.entries(dataLogin)).toString();
+		console.log(dataLogin, s)
+	try{
+	await rest.login(s).then(res=> console.log(res)).catch(err=> console.log(err))
+	}catch(error){
+		console.log(error)
+	}
+	  };
+	 
 
 	return (
 		<View style={styles.container}>
@@ -20,24 +39,36 @@ export default () => {
 				style={styles.logo}
 				source={require("../assets/images/logo.png")}
 			/>
+			<View >
 			<Text style={styles.login}>LOGIN</Text>
 			<TextInput
+				name= "username" 
 				style={styles.input}
-				onChangeText={onChangeEmail}
-				value={email}
-				placeholder='email'
+				// onChangeText={handleChange}
+				onChangeText={text => setDataLogin({
+					...dataLogin,
+					username: text,
+				})}
+				value={dataLogin.username}
+				placeholder='Email or Username'
 				keyboardType='numeric'
 			/>
 			<TextInput
+			 name = "password"
 				secureTextEntry={true}
 				style={styles.input}
-				onChangeText={onChangePass}
-				value={pass}
+				// onChangeText={handleChange}
+				onChangeText={text => setDataLogin({
+					...dataLogin,
+					password: text,
+				})}
+				value={dataLogin.password}
 				placeholder='password'
 				keyboardType='numeric'
 			/>
+			</View>
 			<TouchableOpacity style={styles.button}>
-				<Text style={styles.textBtn}>CONTINUE</Text>
+				<Button onPress = {handleChange} style={styles.textBtn} title = "LOGIN"></Button>
 			</TouchableOpacity>
 			<Text style={styles.baseText}>Forgot Password?</Text>
 			<Text style={styles.baseText}>Dont have account? Create an account</Text>

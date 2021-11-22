@@ -3,7 +3,7 @@
 import React, { Component } from "react";
 import { View, StyleSheet, Image, Text } from "react-native";
 import Icon from "@expo/vector-icons/Ionicons";
-import ChartCompany from "../../components/ChartCompany";
+import ChartCompany from "../../src/components/ChartCompany";
 
 const TotalCompany = ({ navigation, route }) => {
 	return (

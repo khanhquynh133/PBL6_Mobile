@@ -11,7 +11,7 @@ import {
 	ScrollView,
 } from "react-native";
 import Icon from "@expo/vector-icons/Ionicons";
-import Cards from "../../components/Cards";
+import Cards from "../../src/components/Cards";
 
 export default class Home extends Component {
 	render() {

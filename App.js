@@ -8,7 +8,7 @@ import HomePageAdmin from "./screens/Admin/HomePageAdmin";
 import TotalCompany from "./screens/Admin/TotalCompany";
 import Company from "./screens/Admin/Company";
 import DetailCompany from "./screens/Admin/DetailCompany";
-import CreatePost from "./screens/HR/CreatePost";
+//import CreatePost from "./screens/HR/CreatePost";
 
 import { DrawerContent } from "./screens/DrawerContent";
 
@@ -32,19 +32,19 @@ const App = () => {
 
 	return (
 		//<PaperProvider>
-		<NavigationContainer>
-			<Drawer.Navigator drawerContent={(props) => <DrawerContent {...props} />}>
-				<Drawer.Screen name='HPA' component={Company} />
-				{/* <Drawer.Screen name='Company' component={Company} /> */}
-			</Drawer.Navigator>
-		</NavigationContainer>
+		// <NavigationContainer>
+		// 	<Drawer.Navigator drawerContent={(props) => <DrawerContent {...props} />}>
+		// 		<Drawer.Screen name='HPA' component={Company} />
+		// 		{/* <Drawer.Screen name='Company' component={Company} /> */}
+		// 	</Drawer.Navigator>
+		// </NavigationContainer>
 		//</PaperProvider>
 
-		// <NavigationContainer>
-		// 	<Stack.Navigator>
-		// 		<Stack.Screen name='Login' component={Login}></Stack.Screen>
-		// 	</Stack.Navigator>
-		// </NavigationContainer>
+		<NavigationContainer>
+			<Stack.Navigator>
+				<Stack.Screen name='Login' component={Login}></Stack.Screen>
+			</Stack.Navigator>
+		</NavigationContainer>
 	);
 };
 export default App;
