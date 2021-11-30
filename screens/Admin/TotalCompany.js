@@ -3,6 +3,7 @@
 import React, { Component } from "react";
 import { View, StyleSheet, Image, Text } from "react-native";
 import Icon from "@expo/vector-icons/Ionicons";
+import COLORS from "../../consts/colors";
 import ChartCompany from "../../src/components/ChartCompany";
 
 const TotalCompany = ({ navigation, route }) => {
@@ -11,7 +12,7 @@ const TotalCompany = ({ navigation, route }) => {
 			<View style={styles.locationContainer}>
 				<Text style={styles.textTotal}>TOTAL COMPANY</Text>
 			</View>
-
+			<ChartCompany />
 			<View style={styles.bottomCard}>
 				<View style={styles.bottomCol}>
 					<Text style={styles.textYear}>In 2021</Text>
@@ -72,13 +73,13 @@ const styles = StyleSheet.create({
 	textTotal: {
 		fontWeight: "bold",
 		fontSize: 16,
-		color: "red",
+		color: COLORS.blue,
 	},
 
 	bottomCard: {
-		backgroundColor: "#1c2732",
-		height: 500,
-		marginTop: 100,
+		backgroundColor: COLORS.blue,
+		height: 160,
+		marginTop: 50,
 		borderTopLeftRadius: 30,
 		borderTopRightRadius: 30,
 	},
@@ -89,14 +90,15 @@ const styles = StyleSheet.create({
 		marginTop: 20,
 	},
 	textYear: {
-		color: "#FFF",
-		fontSize: 12,
+		fontFamily: "Sans-serif",
 		fontWeight: "bold",
+		color: "white",
+		fontSize: 16,
 	},
 
 	button: {
 		borderRadius: 15,
-		borderColor: "red",
+		borderColor: "white",
 		borderWidth: 1,
 		marginHorizontal: 30,
 		paddingHorizontal: 20,
@@ -106,7 +108,9 @@ const styles = StyleSheet.create({
 		marginBottom: 5,
 	},
 	btnText: {
-		color: "red",
+		fontFamily: "Sans-serif",
+		fontWeight: "bold",
+		color: "yellow",
 		fontSize: 16,
 		fontWeight: "bold",
 	},
