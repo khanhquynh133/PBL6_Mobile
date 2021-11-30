@@ -1,6 +1,6 @@
 /** @format */
 
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
 	StyleSheet,
 	Text,
@@ -17,21 +17,26 @@ export default () => {
 	const [dataLogin, setDataLogin] = useState({
 		username: "",
 		password: "",
-	})
+	});
 	// const [email, onChangeEmail] = useState("");
 	// const [pass, onChangePass] = useState("");
-	
-	const handleChange = async() => {
+
+	const handleChange = async () => {
 		dataLogin.grant_type = "password";
 		let s = new URLSearchParams(Object.entries(dataLogin)).toString();
-		console.log(dataLogin, s)
-	try{
-	await rest.login(s).then(res=> console.log(res)).catch(err=> console.log(err))
-	}catch(error){
-		console.log(error)
-	}
-	  };
-	 
+		console.log(dataLogin, s);
+		try {
+			await rest
+				.login(s)
+				.then((res) => {
+					console.log(res);
+					navigation.navigate("HomePageAdmin");
+				})
+				.catch((err) => console.log(err));
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
 	return (
 		<View style={styles.container}>
@@ -39,37 +44,45 @@ export default () => {
 				style={styles.logo}
 				source={require("../assets/images/logo.png")}
 			/>
-			<View >
+
 			<Text style={styles.login}>LOGIN</Text>
 			<TextInput
-				name= "username" 
+				name='username'
 				style={styles.input}
 				// onChangeText={handleChange}
-				onChangeText={text => setDataLogin({
-					...dataLogin,
-					username: text,
-				})}
+				onChangeText={(text) =>
+					setDataLogin({
+						...dataLogin,
+						username: text,
+					})
+				}
 				value={dataLogin.username}
 				placeholder='Email or Username'
 				keyboardType='numeric'
 			/>
 			<TextInput
-			 name = "password"
+				name='password'
 				secureTextEntry={true}
 				style={styles.input}
 				// onChangeText={handleChange}
-				onChangeText={text => setDataLogin({
-					...dataLogin,
-					password: text,
-				})}
+				onChangeText={(text) =>
+					setDataLogin({
+						...dataLogin,
+						password: text,
+					})
+				}
 				value={dataLogin.password}
 				placeholder='password'
 				keyboardType='numeric'
 			/>
-			</View>
-			<TouchableOpacity style={styles.button}>
+
+			{/* <TouchableOpacity style={styles.button}>
 				<Button onPress = {handleChange} style={styles.textBtn} title = "LOGIN"></Button>
+			</TouchableOpacity> */}
+			<TouchableOpacity style={styles.button} onPress={handleChange}>
+				<Text style={styles.textBtn}>CONTINUE</Text>
 			</TouchableOpacity>
+
 			<Text style={styles.baseText}>Forgot Password?</Text>
 			<Text style={styles.baseText}>Dont have account? Create an account</Text>
 		</View>
@@ -125,6 +138,6 @@ const styles = StyleSheet.create({
 		fontWeight: "bold",
 		fontSize: 16,
 		color: "#FFF",
-		align: "center",
+		textAlign: "center",
 	},
 });
