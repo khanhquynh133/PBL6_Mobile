@@ -9,6 +9,7 @@ import {
 	FlatList,
 	Image,
 	Dimensions,
+	TextInputBase,
 } from "react-native";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import Icon from "react-native-vector-icons/MaterialIcons";

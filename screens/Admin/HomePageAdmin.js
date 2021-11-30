@@ -10,42 +10,61 @@ import {
 	ImageBackground,
 	ScrollView,
 } from "react-native";
-import Icon from "@expo/vector-icons/Ionicons";
+import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createStackNavigator } from "@react-navigation/stack";
+import { Provider as PaperProvider } from "react-native-paper";
 import Cards from "../../src/components/Cards";
+
+const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
+
+function HomePage() {
+	return (
+		<View style={styles.container}>
+			<Image
+				style={styles.logo}
+				source={require("../../assets/images/logo.png")}
+			/>
+			<Text style={styles.textDash}>HREO DASH</Text>
+			<ScrollView
+				style={{ marginTop: 30 }}
+				showsHorizontalScrollIndicator={false}
+				horizontal>
+				<Cards
+					onPress={() => this.props.navigation.navigate("Detail")}
+					icon='home'
+					title='COMPANY'
+					number='1101'
+				/>
+				<Cards
+					onPress={() => this.props.navigation.navigate("Detail")}
+					icon='person'
+					title='APPLICANTS'
+					number='1101'
+				/>
+				<Cards
+					onPress={() => this.props.navigation.navigate("Detail")}
+					icon='people'
+					title='HUMAN RESOURCES'
+					number='1111'
+				/>
+			</ScrollView>
+		</View>
+	);
+}
 
 export default class Home extends Component {
 	render() {
 		return (
-			<View style={styles.container}>
-				<Image
-					style={styles.logo}
-					source={require("../../assets/images/logo.png")}
-				/>
-				<Text style={styles.textDash}>HREO DASH</Text>
-				<ScrollView
-					style={{ marginTop: 30 }}
-					showsHorizontalScrollIndicator={false}
-					horizontal>
-					<Cards
-						onPress={() => this.props.navigation.navigate("Detail")}
-						icon='person-outline'
-						title='COMPANY'
-						number='1101'
-					/>
-					<Cards
-						onPress={() => this.props.navigation.navigate("Detail")}
-						icon='person-outline'
-						title='APPLICANTS'
-						number='1101'
-					/>
-					<Cards
-						onPress={() => this.props.navigation.navigate("Detail")}
-						icon='badge-account-outline'
-						title='HUMAN RESOURCES'
-						number='1111'
-					/>
-				</ScrollView>
-			</View>
+			<PaperProvider>
+				<NavigationContainer>
+					<Drawer.Navigator
+						drawerContent={(props) => <DrawerContent {...props} />}>
+						<Drawer.Screen name='Home' child={HomePage} />
+					</Drawer.Navigator>
+				</NavigationContainer>
+			</PaperProvider>
 		);
 	}
 }
