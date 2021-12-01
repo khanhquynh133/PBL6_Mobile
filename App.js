@@ -9,12 +9,12 @@ import TotalCompany from "./screens/Admin/TotalCompany";
 import TotalApplicant from "./screens/Admin/TotalApplicant";
 import TotalHR from "./screens/Admin/TotalHR";
 import Company from "./screens/Admin/Company";
-import DetailCompany from "./screens/Admin/DetailCompany";
-import CreatePost from "./screens/HR/CreatePost";
-import ListPosts from "./screens/HR/ListPosts";
+// import DetailCompany from "./screens/Admin/DetailCompany";
+// import CreatePost from "./screens/HR/CreatePost";
+// import ListPosts from "./screens/HR/ListPosts";
 // import ListInvitations from "./screens/HR/ListInvitations";
-import ListApplicants from "./screens/HR/ListApplicants";
-import ListTests from "./screens/HR/ListTests";
+// import ListApplicants from "./screens/HR/ListApplicants";
+// import ListTests from "./screens/HR/ListTests";
 //import Example from "./screens/HR/Example";
 
 import { DrawerContent } from "./screens/DrawerContent";
@@ -29,19 +29,20 @@ const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
 const App = () => {
-	return (
-		<NavigationContainer>
-			<Stack.Navigator
-				screenOptions={{
-					headerShown: false,
-				}}
-				initialRouteName='Welcome'>
-				<Stack.Screen name='Welcome' component={Company} />
-				<Stack.Screen name='Login' component={Login} />
-				<Stack.Screen name='Register' component={Register} />
-			</Stack.Navigator>
-		</NavigationContainer>
-	);
+  return (
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+        initialRouteName="Welcome"
+      >
+        <Stack.Screen name="Welcome" component={Welcome} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Register" component={Register} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 };
 export default App;
 // screenOptions={{
