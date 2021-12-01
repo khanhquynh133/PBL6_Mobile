@@ -10,7 +10,7 @@ import {
 	TouchableOpacity,
 } from "react-native";
 
-export default () => {
+const Register = ({ navigation }) => {
 	const [name, onChangeName] = React.useState("");
 	const [email, onChangeEmail] = React.useState("");
 	const [pass, onChangePass] = React.useState("");
@@ -45,11 +45,16 @@ export default () => {
 			<TouchableOpacity style={styles.button}>
 				<Text style={styles.textBtn}>REGISTER</Text>
 			</TouchableOpacity>
-			<Text style={styles.baseText}>Already have an account? Sign in</Text>
+			<Text style={styles.baseText}>
+				Already have an account? <nbsp /> <nbsp />
+				<TouchableOpacity onPress={() => navigation.navigate("Login")}>
+					<Text style={styles.baseText}>Sign In</Text>
+				</TouchableOpacity>
+			</Text>
 		</View>
 	);
 };
-
+export default Register;
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
