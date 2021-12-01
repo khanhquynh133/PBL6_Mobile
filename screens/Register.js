@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
 		fontWeight: "bold",
 		fontSize: 15,
 		color: "#FFF",
-		align: "center",
+		textAlign: "center",
 	},
 	baseText: {
 		fontFamily: "Sans-serif",

@@ -36,7 +36,7 @@ const App = () => {
 					headerShown: false,
 				}}
 				initialRouteName='Welcome'>
-				<Stack.Screen name='Welcome' component={Company} />
+				<Stack.Screen name='Welcome' component={Welcome} />
 				<Stack.Screen name='Login' component={Login} />
 				<Stack.Screen name='Register' component={Register} />
 			</Stack.Navigator>
